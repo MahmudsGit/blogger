@@ -1,14 +1,49 @@
+@import url(./fonts.css);
 html, body {
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
+:root{
+    /* Theme Color Variable Declaration */
+    --text-grey:#3f4954;
+    --text-light:#686666da;
+    --bg-color:#0f0f0f;
+    --white:#fff;
+    --midnight:#104f55;
+    /* gradient Color */
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    /* Theme Font Family Variable Declaration */
+    --Abel:'Abel',Cursive;
+    --Anton:'Anton',Cursive;
+    --Josefin_Sans:'Josefin_Sans',Cursive;
+    --Lexend:'Lexend',Cursive;
+    --Livvic:'Livvic',Cursive;
+}
 /* ----  Global CSS Start   ---- */
 a{
     text-decoration: none;
+    color: var(--midnight);
 }
 ul{
     list-style-type: none;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+h1{
+    font-family: var(--Lexend);
+    font-size: 2.5rem;
+}
+h2{
+    font-family: var(--Lexend);
+}
+h2{
+    font-family: var(--Abel);
+    font-size: 1.3rem;
 }
 /* ----  Global CSS End   ---- */
 
@@ -17,14 +52,37 @@ ul{
     background: white;
     padding: 0 2rem;
     height: 0rem;
-    min-height: 40vh;
+    min-height: 10vh;
     overflow: hidden;
+    transition: height 1s ease-in-out;
 }
 .nav .nav-brand a{
     font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Lexend);
 }
 .nav .nav-menu {
     justify-content: space-between;
+}
+.nav .toggle-collapse{
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+.nav .toggle-collapse .toggle-icon{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem;
+}
+.collapse{
+    height: 30rem;
+}
+.nav .toggle-collapse .toggle-icon i{
+    font-size: 1.4rem;
+    color: var(--text-grey);
 }
 .nav .nav-items{
     margin: 0;
@@ -34,5 +92,66 @@ ul{
     padding: 1.6rem 1rem;
     font-size: 1.1rem;
     position: relative;
+    font-family: var(--Abel);
 }
+.nav .nav-items .nav-link:hover{
+    background-color: var(--midnight);
+}
+.nav .nav-items .nav-link:hover a{
+    color: var(--white);
+}
+.nav .social {
+    padding: 1.4rem 0;
+}
+.nav .social i{
+    padding: 0 .3rem;
+}
+.nav .social i:hover {
+    color: #a1c4cf;
+}
+
 /* ----  nav CSS end   ---- */
+/* main css start */
+main .site-title{
+    background: url(../asssts/images/romain-gal-eXerHY11qSE-unsplash.jpg);
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title .site-background{
+    padding-top: 10rem;
+    color: var(--white);
+    text-align: center;
+}
+main .site-title h1, h3{
+    margin: .3rem;
+}
+main .site-title .btn{
+    margin: 1.8rem;
+    background:var(--sky);
+}
+/* main css end */
+
+
+
+
+
+
+
+
+
+
+
+
+/* View port Less then or equal to 750 start */
+@media only screen and (max-width:750px){
+    .nav .nav-menu, .nav .nav-items{
+        flex-direction: column;
+    }
+    .nav .toggle-collapse{
+        display: initial;
+    }
+}
+
+/* View port Less then or equal to 750 end */
